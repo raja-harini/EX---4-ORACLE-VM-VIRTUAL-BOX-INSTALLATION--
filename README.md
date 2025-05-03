@@ -208,6 +208,7 @@ vi [filename]
 ```
 ![alt text](vi.png)
 
-
+## Result:
+Thus, various Linux commands were executed successfully in Kali Linux virtual machine.
 
 
