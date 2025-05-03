@@ -1,48 +1,213 @@
-# EX---4-ORACLE-VM-VIRTUAL-BOX-INSTALLATION--
+# Ex.3(A-C) Virtualization: Installation and Configuration of Oracle VirtualBox & Kali Linux, and Execution of Linux Commands
 
-## Aim
-To install Oracle VM VirtualBox, a free and open-source hosted hypervisor, on a computer system, enabling the creation and management of virtual machines for running multiple operating systems on a single host machine.
+## Aim:
+To set up a virtualized environment using Oracle VirtualBox, install Kali Linux as a guest OS, and execute fundamental Linux commands.
 
-## Specifications:
+## 3.a) Installation and Configuration of Oracle VirtualBox
 
-### System Requirements:
+## Aim:
+To install and configure Oracle VM VirtualBox.
 
-* Operating System: Windows, macOS, or Linux-based OS
-* Processor: x86/AMD64-compatible CPU (Intel or AMD)
-* RAM: Minimum 4 GB (8 GB or more recommended)
-* Storage: Minimum 100 MB for the base application, plus additional space for each virtual machine (at least 20 GB free recommended)
-* Graphics: Hardware virtualization support (Intel VT-x or AMD-V) is recommended for optimal performance
+## Pre-requisites:
 
-### Software Requirements:
+* Machine with Internet access
+* Minimum 4 GB RAM
+* Sufficient storage space
 
-Internet connection to download the VirtualBox installer
-Optionally, Oracle VM VirtualBox Extension Pack for additional features
+## Steps:
+1. Download Oracle VM VirtualBox:
 
-## Procedure:
+    * Visit Oracle VirtualBox Official Site
+    * Download installer for your OS (Windows/macOS/Linux).
+2. Install Oracle VM VirtualBox (Example: Windows):
 
-* Step 1: Download VirtualBox
-Go to the VirtualBox official website: VirtualBox Downloads
-Choose the appropriate version for your operating system:
-Windows hosts (for Windows users)
-macOS hosts (for Mac users)
-Linux distributions (for Linux users)
+    * Launch Installer → Allow Changes → Click Next.
+    * Choose Installation Options → Click Next.
+    * Accept Network Interface Warning → Click Yes.
+    * Click Install.
+    * Finish Installation and Launch VirtualBox.
+3. Configure VirtualBox:
 
-* Step 2: Install VirtualBox (Windows/macOS)
-For Windows:
-Open the downloaded installer (VirtualBox-x.x.x-xxxx-Win.exe).
-Follow the setup wizard:
-Click Next.
-Select the installation location (default is recommended).
-Choose the components you want to install and click Next.
-The installer may show a warning about network interfaces; allow it to proceed by clicking Yes.
-Click Install and allow the process to complete.
-
-* Step 3: Verify the Installation
-Launch VirtualBox from the desktop or start menu.
-The VirtualBox Manager should open, showing options to create and manage virtual machines.
-
-## Output:
-![alt text](op.png)
+    * Open VirtualBox.
+    * Click New → Name VM → Select Type (Linux/Windows) and Version.
+    * Allocate:
+        * Minimum 2 GB RAM
+        * Create Virtual Hard Disk (20 GB recommended).
+    * Start Virtual Machine and provide ISO to install OS.
 
 ## Result:
-Oracle VM VirtualBox has been successfully installed on the system, and the user can now create and run virtual machines using different operating systems.
+Thus, Oracle VM VirtualBox was installed successfully.
+
+## 3.b) Installation and Configuration of Kali Linux
+
+## Aim:
+To install and configure Kali Linux in Oracle VirtualBox.
+
+## Pre-requisites:
+* Oracle VM VirtualBox Installed
+* 4 GB RAM and 20 GB Storage Minimum
+* Kali Linux ISO image
+
+## Steps:
+1. Download Kali Linux ISO:
+
+    * Visit Kali Linux Official Site
+    * Download 64-bit ISO (Installer version).
+2. Create a New Virtual Machine:
+
+    * Open VirtualBox → Click New.
+    * Name: "Kali Linux" → Type: Linux → Version: Debian (64-bit).
+3. Allocate Memory:
+
+    * Minimum 2 GB RAM (recommended 4 GB).
+4. Create Virtual Hard Disk:
+
+    * Select VDI (VirtualBox Disk Image).
+    * Choose Dynamically allocated.
+    * Set Disk size to 20 GB or more.
+5. Configure ISO Image:
+
+    * Settings → Storage → Controller: IDE → Empty CD → Choose Disk File → Select Kali Linux ISO.
+6. Start Installation:
+
+    * Boot Virtual Machine → Choose Graphical Install.
+    * Set Language, Region, Keyboard.
+    * Configure Network → Set Hostname (e.g., kali).
+    * Set root password.
+    * Disk Partitioning: Use entire disk → All files in one partition.
+    * Install System → Install GRUB Bootloader → Finish Installation.
+7. Login to Kali Linux:
+
+    * Use root credentials.
+8. (Optional) Install Guest Additions:
+
+    * Devices → Insert Guest Additions CD Image → Follow steps inside Kali.
+
+## Snapshots:
+AWS Account Creation Snapshot
+
+Snapshot 1: Installing Oracle VirtualBox
+![alt text](op1.png)
+
+Snapshot 3: Kali Running in VirtualBox
+
+![alt text](op2.png)
+
+## Result:
+Thus, Kali Linux guest OS was installed and configured successfully.
+
+## 3.c) Execution of Linux Commands in Kali
+
+## About Linux:
+* Open-source operating system.
+* Kernel manages communication between hardware and software.
+* Commands are case-sensitive.
+
+## Linux Commands:
+1. ls Command
+    
+    The ls command is used to display a list of content of a directory.
+
+### Syntax:
+```
+ls
+```
+![alt text](ls.png)
+
+2. pwd Command
+
+    The pwd command is used to display the location of the current working directory.
+
+### Syntax: 
+```
+pwd
+```
+![alt text](pwd.png)
+
+3. mkdir Command
+
+    The mkdir command is used to create a new directory under any directory.
+
+### Syntax: 
+```
+mkdir <directory_name>
+```
+![alt text](mkdir.png)
+
+4. rmdir Command
+
+    The rmdir command is used to delete a directory.
+
+### Syntax: 
+```
+rmdir <directory_name>
+```
+![alt text](rmdir.png)
+
+5. cd Command
+The cd command is used to change the current directory
+
+### Syntax: 
+```
+cd <directory_name>
+```
+![alt text](cd.png)
+
+6. cat Command
+
+    The cat command is a multi-purpose utility in the Linux system. It can be used to create a file, display content ofthe file, copy the content of one file to another file, and more.
+
+### Syntax: 
+```
+cat [options] [file_name]
+```
+![alt text](cat.png)
+
+![alt text](<cat op.png>)
+
+7. cp Command
+
+    The cp command is used to copy a file or directory.
+### Syntax: 
+```
+cp [source] [destination]
+```
+![alt text](copy.png)
+
+![alt text](<cat op2.png>)
+
+8. mv Command
+
+    The mv command is used to move a file or a directory form one location to another location.
+
+### Syntax: 
+```
+mv [source] [destination]
+```
+![alt text](mv.png)
+
+![alt text](<mv op.png>)
+
+9. touch Command
+
+    Create empty file.
+
+### Syntax: 
+```
+touch [filename]
+```
+![alt text](touch.png)
+
+10. vi Command
+
+    Edit file contents using editor.
+
+### Syntax: 
+```
+vi [filename]
+```
+![alt text](vi.png)
+
+
+
+
